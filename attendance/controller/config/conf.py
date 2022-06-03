@@ -1,8 +1,5 @@
-from email.encoders import encode_noop
-from operator import le
 import sys
 import os
-from xml.etree import ElementPath
 sys.path.append('../')
 
 def config(ficha):

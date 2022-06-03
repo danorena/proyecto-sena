@@ -33,9 +33,6 @@ ap.add_argument("-p", "--server-port", required=True, type=str,
 args = vars(ap.parse_args())
 
 # load the configuration file
-# ruta = path()
-# ruta += ('model\\datasets\\attendance_system_dataset\\111\\config')
-# os.chdir(ruta)
 conf = Conf(args["conf"])
 
 # create a container for all sockets in this process
@@ -225,5 +222,7 @@ while True:
 
 # clean up
 print("[INFO] cleaning up...")
+ttsEngine.say("{} la asistencia ha sido registrada.".format(name))
+ttsEngine.runAndWait()
 vs.stop()
 

@@ -1,5 +1,4 @@
 import sys
-import os
 sys.path.append('../../')
 
 
@@ -47,8 +46,6 @@ class Attendance():
             secondLine = 'datasets/attendance_system_dataset/'+ ficha +'/config/config.json'
             finalLine = firstLine + secondLine
             os.system(finalLine)
-            # hilo = Thread(target=os.system, args=(finalLine))
-            # hilo.start()
         
             # Entrenar el modelo
             firstLine = 'python train_model.py --conf '
@@ -59,7 +56,6 @@ class Attendance():
         
 
         # Iniciar el servidor
-        # python server.py --server-port 5555 --conf config/config.json
         firstLine = 'python server.py --server-port 5555 --conf '
         secondLine = 'datasets/attendance_system_dataset/'+ ficha +'/config/config.json'
         finalLine = firstLine + secondLine

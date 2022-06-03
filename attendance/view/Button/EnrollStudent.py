@@ -1,4 +1,3 @@
-from asyncio import sleep
 import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.font import BOLD

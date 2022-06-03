@@ -59,7 +59,7 @@ class Home():
         frameDelete.pack(side="top",expand=tk.NO,fill=tk.BOTH)
         # BOTONES ELIMINAR
         # ---------- Aprendiz -------------
-        btnDeleteStudent = tk.Button(frameDelete, text="Eliminar Aprendiz", width = 20 , height= 2, font=("Roboto 15 bold"),bd=0 ,fg="#f0f1ee", bg="#2f404f")
+        btnDeleteStudent = tk.Button(frameDelete, text="Eliminar Aprendiz", width = 20 , height= 2, font=("Roboto 15 bold"),bd=0 ,fg="#f0f1ee", bg="#2f404f", command=self.studentDelete)
         btnDeleteStudent.pack(side = "left",fill=tk.Y, padx= 250, pady = 70)
         # ---------- Ficha -------------
         btnDeleteGroup = tk.Button(frameDelete, text="Eliminar Ficha",width = 20 , height= 2, font=("Roboto 15 bold"),bd=0 ,fg="#f0f1ee", bg="#2f404f", command=self.groupDelete)
@@ -88,14 +88,18 @@ class Home():
         from controller.enroll import enrollStudent
         self.window.destroy()
         enrollStudent()
+        
+    # Ir a Eliminar Aprendiz
+    def studentDelete(self):
+        from controller.delete import deleteStudent
+        self.window.destroy()
+        deleteStudent()
 
     # Ir a Registrar Ficha
     def groupEnroll(self):
         from controller.enroll import enrollGroup
         self.window.destroy()
         enrollGroup()
-
-    # Ir a Eliminar Aprendiz
 
     # Ir a Eliminar Ficha
     def groupDelete(self):
