@@ -99,16 +99,18 @@ while True:
 
 		# draw info such as class, class timing, and current time on
 		# the frame
-		cv2.putText(frame, "Ficha: {}".format(conf["class"]),
-			(10, 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+		cv2.putText(frame, "Ficha: {}".format(conf["class"]),(10, 15), 
+            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
 		cv2.putText(frame, "Hora de entrada: {}".format(conf["timing"]),
-			(10, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+			(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
 		cv2.putText(frame, "Hora actual: {}".format(
-			currentTime.strftime("%H:%M:%S")), (10, 40),
+			currentTime.strftime("%H:%M:%S")), (10, 45),
 			cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
+		cv2.putText(frame, "Presione la tecla 'q' para salir",(10, 60),
+            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
 
 		# show the frame
-		cv2.imshow("Attendance System", frame)
+		cv2.imshow("Toma de asistencia", frame)
 		key = cv2.waitKey(1) & 0xFF
 
 		# if the `q` key was pressed, break from the loop
@@ -125,8 +127,7 @@ while True:
 
 	# detect the (x, y)-coordinates of the bounding boxes
 	# corresponding to each face in the input image
-	boxes = face_recognition.face_locations(rgb,
-		model=conf["detection_method"])
+	boxes = face_recognition.face_locations(rgb,model=conf["detection_method"])
 
 	# loop over the face detections
 	for (top, right, bottom, left) in boxes:
@@ -149,7 +150,8 @@ while True:
 	cv2.putText(frame, "Tiempo transcurrido: {}s".format(timeRemaining),
 		(10, 55), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 1)
 
-	# check if atleast one face has been detected	
+#  -------------	
+	# check if atleast one face has been detected
 	if len(boxes) > 0:
 		# compute the facial embedding for the face
 		encodings = face_recognition.face_encodings(rgb, boxes)
@@ -206,9 +208,9 @@ while True:
 			label = "Por favor espere mientras el sistema lo detecta"
 			cv2.putText(frame, label, (5, 175),
 				cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 2)
-
+# ---------------------
 	# show the frame
-	cv2.imshow("Attendance System", frame)
+	cv2.imshow("Toma de asistencia", frame)
 	key = cv2.waitKey(1) & 0xFF
 
 	# check if the `q` key was pressed
