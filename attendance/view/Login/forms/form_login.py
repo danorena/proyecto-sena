@@ -1,6 +1,5 @@
 # NO INICIAR, SOLO FUNCIONA CON LA RUTA DEL MAIN.
 
-from email.mime import image
 import tkinter as tk
 from tkinter import ttk, messagebox
 from tkinter.font import BOLD
@@ -12,6 +11,7 @@ sys.path.append('../../')
 import view.Login.util.generic as utl 
 from view.Login.home import Home
 from controller.path import path
+from controller.controllerLogin import log
 
 class App():
 
@@ -19,11 +19,13 @@ class App():
     def verify(self):
         userV = self.user.get()
         password = self.password.get()
-        # if (userV == 'root' and password == '123') :
-        self.window.destroy()
-        Home()
-        # else:
-        #     messagebox.showerror(message="Los datos proporcionados son Incorrectos, intente denuevo", title="Incorrecto!")
+        
+        valid = log(userV,password)
+        if (valid==True) :
+            self.window.destroy()
+            Home()
+        else:
+            messagebox.showerror(message="Los datos proporcionados son Incorrectos, intente denuevo", title="Incorrecto!")
 
     def __init__(self):
         self.window=tk.Tk()
