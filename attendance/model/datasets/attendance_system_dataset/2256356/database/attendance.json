@@ -1,0 +1,26 @@
+{"_default": {"1": {"class": "2256256"}},
+"student": 
+    {"1": {"1": ["DavidAndresNorenaGiraldo", "enrolled"]}, 
+    "2": {"2": ["LucasArboledaBedoya", "enrolled"]}, 
+    "3": {"3": ["SebastianSalasCuartas", "enrolled"]}, 
+    "4": {"4": ["JuanPabloRojasArismendy", "enrolled"]}, 
+    "5": {"5": ["SimonLopezPelaez", "enrolled"]}, 
+    "6": {"6": ["MiguelAngelCastillaBallestas", "enrolled"]}, 
+    "7": {"7": ["JuanDavidRiveraCasallas", "enrolled"]}, 
+    "8": {"8": ["EmmanuelMunozZapata", "enrolled"]}, 
+    "9": {"9": ["JuanDavidRuizAlzate", "enrolled"]}, 
+    "10": {"10": ["OrlandoRobertoVilladiegoOtero", "enrolled"]}},
+"attendance": {
+    "1": {"2022-07-01": {"1": "13:01:32"}},
+    "2": {"2022-07-01": {"3": "15:19:39"}},
+    "3": {"2022-07-01": {"4": "15:51:29"}},
+    "4": {"2022-07-01": {"5": "16:17:52"}},
+    "5": {"2022-07-01": {"6": "16:20:09"}},
+    "6": {"2022-07-01": {"7": "16:48:03"}},
+    "7": {"2022-07-01": {"8": "17:04:26"}},
+    "8": {"2022-07-01": {"9": "17:17:46"}},
+    "9": {"2022-07-01": {"10": "17:04:26"}},
+    "10": {"2022-07-01": {"2": "15:05:36"}}
+    
+    }
+}
