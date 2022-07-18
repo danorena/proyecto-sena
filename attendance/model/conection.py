@@ -3,10 +3,10 @@ import mysql.connector as sql
 class Connect():
     def conn(self):
         connected = sql.connect(
-            user='uempkk9vesxwg5af',
-            password = 'dRzWyHluiDPzEZt68igL',
-            host = 'b60lkhh7i47obofeagt8-mysql.services.clever-cloud.com',
-            database = 'b60lkhh7i47obofeagt8'
+            user='root',
+            password = '',
+            host = 'localhost',
+            database = 'usuarios'
             )
         return connected
     
